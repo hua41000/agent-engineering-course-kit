@@ -91,3 +91,12 @@ release:
   download_url: null
 
 source_repository: https://github.com/shanggqm/agent-engineering-course-kit
+
+chatgpt_site:
+  project_id: appgprj_6acae82c3a0c819185e28afa1ba70512
+  url: https://agent-architecture-composer.guomeiqing1984.chatgpt.site
+  audience: owner-private
+  deployed_at: 2026-10-11
+  source_commit: 129955e8522872948e5bebfd36fd13a79b0d7529
+  deployment_id: appgdep_6acae84f4ea88191a569d8b65c9622cc
+  checkout: work/sites/architecture-composer
