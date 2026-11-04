@@ -8,11 +8,13 @@ owner: guomeiqing
 updated: 2026-11-04
 path_base: repository-root
 repository: https://github.com/shanggqm/agent-engineering-course-kit
+website: https://shanggqm.github.io/agent-engineering-course-kit/agent-architecture-composer/
 canonical:
   control_page: README.md
   course_map: course-map.json
   maintenance_rules: AGENTS.md
   usage_notice: NOTICE.md
+  deployment_workflow: .github/workflows/pages.yml
 navigation:
   chapter_count: 10
   lesson_count: 43

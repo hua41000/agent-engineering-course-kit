@@ -11,6 +11,7 @@
     "test": "node scripts/check.mjs && npm run test:composer",
     "test:composer": "npm test --prefix chapters/chapter_01_ai_foundations/lesson_02_agent_architecture_selection/agent-architecture-composer",
     "build": "npm run build --prefix chapters/chapter_01_ai_foundations/lesson_02_agent_architecture_selection/agent-architecture-composer",
+    "build:pages": "npm run build && node scripts/build-pages.mjs",
     "start": "npm start --prefix chapters/chapter_01_ai_foundations/lesson_02_agent_architecture_selection/agent-architecture-composer",
     "smoke": "node scripts/smoke.mjs"
   },

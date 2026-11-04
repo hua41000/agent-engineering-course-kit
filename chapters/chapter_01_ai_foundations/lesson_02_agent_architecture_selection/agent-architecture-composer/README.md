@@ -2,6 +2,8 @@
 
 《企业级Agent工程架构实战营》的可下载架构选型配套资产：Web 通过问答建立项目上下文，Skill 读取已有项目后澄清关键问题，两端共用选型逻辑，输出架构方案与决策记录。
 
+在线使用：[Agent Architecture Composer · GitHub Pages](https://shanggqm.github.io/agent-engineering-course-kit/agent-architecture-composer/)。网页无需登录，可直接下载 Skill。
+
 ChatGPT 站点：[Agent 架构选型工具](https://agent-architecture-composer.guomeiqing1984.chatgpt.site)。2026-10-11 发布，当前仅所有者可访问；本公开仓库提供可独立运行的离线版。
 
 ## 直接使用首版
@@ -22,6 +24,8 @@ npm start
 - `dist/index.html`：独立网页。
 - `dist/agent-architecture-composer-skill.zip`：含指令、共享内核、安装说明的完整 Skill 包。
 - `dist/skill/`：解包形式，便于本地使用。
+
+在线网页由仓库 [GitHub Pages 工作流](../../../../.github/workflows/pages.yml)自动发布。推送到 `main` 会在测试、构建与运行检查通过后更新网页；网页和 Skill ZIP 来自同一次构建。直接下载：[Skill ZIP](https://shanggqm.github.io/agent-engineering-course-kit/agent-architecture-composer/agent-architecture-composer-skill.zip)。
 
 Skill 安装：解压 ZIP，把完整的 `agent-architecture-composer` 文件夹放到宿主配置的 Skill 目录，例如 `~/.codex/skills/`。打开目标项目后输入：“使用 agent-architecture-composer 分析这个项目的架构选型，读取现有实现，澄清关键问题，给出完整方案。”具体目录以宿主配置为准。
 

@@ -92,6 +92,15 @@ release:
 
 source_repository: https://github.com/shanggqm/agent-engineering-course-kit
 
+github_pages:
+  url: https://shanggqm.github.io/agent-engineering-course-kit/agent-architecture-composer/
+  audience: public
+  deployment: github-actions
+  workflow: .github/workflows/pages.yml
+  source_branch: main
+  deployed_at: 2026-11-04
+  skill_download: https://shanggqm.github.io/agent-engineering-course-kit/agent-architecture-composer/agent-architecture-composer-skill.zip
+
 chatgpt_site:
   project_id: appgprj_6acae82c3a0c819185e28afa1ba70512
   url: https://agent-architecture-composer.guomeiqing1984.chatgpt.site

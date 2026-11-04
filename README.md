@@ -2,6 +2,8 @@
 
 《企业级Agent工程架构实战营》的公开课程配套项目，按篇章和课次管理示例代码、工具、Skill、模板与学习资料。
 
+在线使用：[Agent Architecture Composer](https://shanggqm.github.io/agent-engineering-course-kit/agent-architecture-composer/)。
+
 ## 快速开始
 
 需要 Node.js 20+、Python 3 和 Git；当前无需安装 npm 依赖。
@@ -61,7 +63,10 @@ chapters/
 npm test          # 导航检查与 Composer 规则回归
 npm run build    # 生成独立 HTML 与 Skill ZIP
 npm run smoke    # 检查离线包、解压 Skill、CLI 与预览服务
+npm run build:pages # 构建 GitHub Pages 部署目录 work/pages
 ```
+
+GitHub Pages 由 [部署工作流](.github/workflows/pages.yml)发布。推送到 `main` 或手动运行工作流时，先执行规则测试、构建与运行检查，再发布 Composer 网页及 Skill ZIP。部署产物只包含公开网页和下载文件。项目站点根路径自动转到 Composer 的独立入口；后续工具可以使用各自的子路径。
 
 课程开发仓库通过 `learner-kit/code/agent-engineering-course-kit/` submodule 固定引用本仓库。修改时先在本仓库提交并推送，再在课程仓库更新 submodule 指针。Composer 的课程 Skill 入口通过相对软链引用本项目 `skill/`。
 

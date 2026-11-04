@@ -31,7 +31,8 @@
               "id": "agent-architecture-composer",
               "title": "Agent Architecture Composer",
               "path": "chapters/chapter_01_ai_foundations/lesson_02_agent_architecture_selection/agent-architecture-composer",
-              "status": "review"
+              "status": "review",
+              "web_url": "https://shanggqm.github.io/agent-engineering-course-kit/agent-architecture-composer/"
             }
           ]
         },
