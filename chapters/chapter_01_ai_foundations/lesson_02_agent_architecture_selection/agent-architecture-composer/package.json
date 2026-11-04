@@ -1,0 +1,12 @@
+{
+  "name": "agent-architecture-composer",
+  "private": true,
+  "type": "module",
+  "description": "Course architecture composer: offline Web and project-aware Skill",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "start": "node scripts/serve.mjs",
+    "test": "node --test tests/*.test.mjs"
+  }
+}

@@ -1,0 +1,22 @@
+id: agent-engineering-course-kit
+title: Agent Engineering Course Kit
+course_name: 企业级Agent工程架构实战营
+curriculum_version: v5
+course_track: formal
+status: active
+owner: guomeiqing
+updated: 2026-11-04
+path_base: repository-root
+repository: https://github.com/shanggqm/agent-engineering-course-kit
+canonical:
+  control_page: README.md
+  course_map: course-map.json
+  maintenance_rules: AGENTS.md
+  usage_notice: NOTICE.md
+navigation:
+  chapter_count: 10
+  lesson_count: 43
+deliverables:
+  - id: agent-architecture-composer
+    path: chapters/chapter_01_ai_foundations/lesson_02_agent_architecture_selection/agent-architecture-composer/manifest.yml
+    status: review

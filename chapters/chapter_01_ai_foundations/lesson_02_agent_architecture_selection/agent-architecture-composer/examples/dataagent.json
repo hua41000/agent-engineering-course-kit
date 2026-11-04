@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "edition": "2026-09-22-preview",
+  "name": "DataAgent 架构方案",
+  "goal": "分析 GMV 下滑原因，给出可回查的解释与经营建议。",
+  "existingStack": "",
+  "notes": "",
+  "scenario": "data",
+  "answers": {
+    "existing": "new",
+    "language": "python",
+    "semantic": "yes",
+    "path": "open",
+    "feedback": "yes",
+    "planning": "long",
+    "parallel": "dynamic",
+    "isolation": "tool",
+    "verifier": "automatic",
+    "effect": "read",
+    "approval": "unknown",
+    "recovery": "resume",
+    "team": "control",
+    "priority": "control",
+    "deployment": "flexible"
+  },
+  "stages": [
+    {
+      "id": "stage-1",
+      "name": "确认指标与目标",
+      "path": "fixed",
+      "effect": "read"
+    },
+    {
+      "id": "stage-2",
+      "name": "查询与多维调查",
+      "path": "inherit",
+      "effect": "read"
+    },
+    {
+      "id": "stage-3",
+      "name": "汇总解释与建议",
+      "path": "fixed",
+      "effect": "inherit"
+    }
+  ]
+}

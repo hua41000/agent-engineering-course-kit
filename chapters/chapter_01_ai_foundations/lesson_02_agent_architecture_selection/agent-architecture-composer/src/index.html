@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="zh-CN" data-bxy-profile="adaptive" data-bxy-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#FF7918">
+<!-- BRAND_ICON -->
+<title>架构选型工作台 · Architecture Composer</title>
+<style>/* APP_STYLES */</style>
+</head>
+<body>
+<div id="app"></div>
+<div id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+<input id="import-file" type="file" accept=".json,application/json" hidden>
+<dialog id="handbook" aria-labelledby="handbook-title"><div class="modal-head"><h2 id="handbook-title">方法手册</h2><button id="close-handbook" class="btn" autofocus>关闭</button></div><div id="handbook-content"></div></dialog>
+<dialog id="tool-menu" class="tools-dialog" aria-labelledby="tools-title"><div class="modal-head"><h2 id="tools-title">更多工具</h2><button id="close-tools" class="btn" autofocus>关闭</button></div><div class="tool-list"><button class="btn" data-action="handbook">方法手册</button><button class="btn" data-action="import">导入会话 JSON</button><button class="btn" data-action="skill">下载 Skill</button><button class="btn" data-action="reset">开始新方案</button><button class="btn danger" data-action="clear">清除本机草稿</button></div></dialog>
+<script>/* APP_SCRIPT */</script>
+</body>
+</html>

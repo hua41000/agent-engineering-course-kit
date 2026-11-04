@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "edition": "2026-09-22-preview",
+  "name": "园区设备巡检升级",
+  "goal": "巡检人员接收设备告警，检查历史记录与维护手册，生成处置建议，经确认后创建工单。",
+  "industryDetail": "园区与环保设施运营",
+  "businessDetail": "设备巡检与工单处置",
+  "existingStack": "已有工作流、设备告警 API 与工单服务",
+  "notes": "",
+  "scenario": "custom",
+  "answers": {
+    "existing": "limited",
+    "industry": "other",
+    "business": "operations",
+    "interaction": "event",
+    "semantic": "yes",
+    "path": "local",
+    "feedback": "yes",
+    "planning": "long",
+    "parallel": "none",
+    "isolation": "none",
+    "current": "workflow",
+    "change": "extension",
+    "bottleneck": "flow",
+    "dataSource": "mixed",
+    "dataReady": "ready",
+    "integration": "api",
+    "verifier": "human",
+    "effect": "write",
+    "approval": "ready",
+    "recovery": "resume",
+    "risk": "material",
+    "autonomy": "approval",
+    "dataPolicy": "internal",
+    "oversight": "audited",
+    "language": "typescript",
+    "team": "lean",
+    "priority": "delivery",
+    "deployment": "private",
+    "latency": "async",
+    "load": "steady",
+    "budget": "balanced",
+    "horizon": "production"
+  },
+  "stages": [
+    {
+      "id": "stage-1",
+      "name": "核心任务",
+      "path": "inherit",
+      "effect": "inherit"
+    }
+  ]
+}

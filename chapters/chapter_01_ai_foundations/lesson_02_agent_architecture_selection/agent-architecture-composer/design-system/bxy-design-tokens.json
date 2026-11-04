@@ -1,0 +1,339 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "name": "BXY Multi-platform Design System",
+  "version": "0.2.4",
+  "canonicalBrandMode": "orange",
+  "color": {
+    "light": {
+      "brand": {
+        "main": "#FF7918",
+        "strong": "#F07115",
+        "light": "#FF9A52",
+        "disabled": "#FFDABF",
+        "background": "#FFF1E7"
+      },
+      "text": {
+        "primary": "#262626",
+        "secondary": "#606265",
+        "tertiary": "#7B7E85",
+        "auxiliary": "#A1A1A1",
+        "disabled": "#D7D7D7",
+        "inverse": "#FFFFFF"
+      },
+      "surface": {
+        "page": "#F5F5F5",
+        "card": "#FFFFFF",
+        "pressed": "#F6F6F6",
+        "progress": "#D7D7D7",
+        "overlay": "#E8E8E8"
+      },
+      "border": {
+        "strong": "#222222",
+        "subtle": "#EFEFEF",
+        "transparent": "rgba(0,0,0,0.03)",
+        "disabled": "#F8F8F8"
+      },
+      "function": {
+        "success": "#34C858",
+        "successBackground": "#ECFDF1",
+        "error": "#FE3B2F",
+        "errorBackground": "#FFF3F2",
+        "link": "#0166FE"
+      },
+      "mask": {
+        "primary": "rgba(0,0,0,0.40)",
+        "secondary": "rgba(0,0,0,0.60)"
+      },
+      "other": {
+        "codePurple": "#B020C7",
+        "codeGreen": "#0C8150",
+        "golden": "#A2714B"
+      }
+    },
+    "dark": {
+      "brand": {
+        "main": "#FF7918",
+        "strong": "#FF8329",
+        "light": "rgba(255,121,24,0.80)",
+        "disabled": "rgba(255,121,24,0.15)",
+        "background": "rgba(255,121,24,0.10)"
+      },
+      "text": {
+        "primary": "#DBDBDB",
+        "secondary": "#9B9B9B",
+        "tertiary": "#606060",
+        "auxiliary": "#3A3B43",
+        "disabled": "#323232",
+        "inverse": "#161616"
+      },
+      "surface": {
+        "page": "#181818",
+        "card": "#101010",
+        "pressed": "#0A0A0A",
+        "progress": "#2B2B2B",
+        "overlay": "#1D1D1D"
+      },
+      "border": {
+        "strong": "#E8E8E8",
+        "subtle": "#1D1D1D",
+        "transparent": "rgba(255,255,255,0.03)",
+        "disabled": "#080808"
+      },
+      "function": {
+        "success": "#26AC47",
+        "successBackground": "#1C1E1D",
+        "error": "#CF3229",
+        "errorBackground": "#232121",
+        "link": "#1E74F6"
+      },
+      "mask": {
+        "primary": "rgba(0,0,0,0.40)",
+        "secondary": "rgba(0,0,0,0.60)"
+      },
+      "other": {
+        "codePurple": "#B020C7",
+        "codeGreen": "#0C8150",
+        "golden": "#A2714B"
+      }
+    }
+  },
+  "spacing": {
+    "0": 0,
+    "2": 2,
+    "4": 4,
+    "6": 6,
+    "8": 8,
+    "10": 10,
+    "12": 12,
+    "14": 14,
+    "16": 16,
+    "18": 18,
+    "20": 20,
+    "22": 22,
+    "24": 24,
+    "26": 26,
+    "32": 32,
+    "40": 40,
+    "48": 48,
+    "64": 64,
+    "80": 80,
+    "100": 100,
+    "120": 120
+  },
+  "radius": {
+    "none": 0,
+    "small": 4,
+    "middle": 8,
+    "border": 10,
+    "bigger": 12,
+    "large": 16,
+    "max": 24,
+    "pill": 9999
+  },
+  "stroke": {
+    "thin": 0.5,
+    "normal": 1,
+    "middle": 1.6,
+    "bold": 2
+  },
+  "shadow": {
+    "down": "0 8px 12px rgba(0,0,0,0.03)",
+    "up": "0 -8px 12px rgba(0,0,0,0.03)",
+    "suspend": "0 2px 8px rgba(0,0,0,0.15)",
+    "popconfirm": "0 2px 12px rgba(62,62,69,0.14)",
+    "message": "0 2px 10px rgba(62,62,69,0.20)",
+    "modal": "0 0 12px rgba(62,62,69,0.12)"
+  },
+  "font": {
+    "product": "-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', 'Noto Sans CJK SC', 'Noto Sans', Helvetica, Arial, sans-serif",
+    "landing": "'MiSans', -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif",
+    "mono": "ui-monospace, SFMono-Regular, Menlo, Consolas, monospace"
+  },
+  "typography": {
+    "pc": {
+      "h1": [
+        24,
+        26,
+        500
+      ],
+      "h2": [
+        18,
+        26,
+        700
+      ],
+      "h3": [
+        16,
+        26,
+        500
+      ],
+      "h3Compact": [
+        15,
+        26,
+        500
+      ],
+      "h4": [
+        14,
+        22,
+        400
+      ],
+      "h5": [
+        12,
+        18,
+        400
+      ],
+      "caption": [
+        11,
+        16,
+        400
+      ]
+    },
+    "mobile": {
+      "h1": [
+        24,
+        26,
+        500
+      ],
+      "h2": [
+        18,
+        26,
+        700
+      ],
+      "h3": [
+        16,
+        24,
+        500
+      ],
+      "h4": [
+        13,
+        22,
+        400
+      ],
+      "h5": [
+        12,
+        18,
+        400
+      ],
+      "h6": [
+        11,
+        16,
+        400
+      ],
+      "buttonLarge": [
+        18,
+        22,
+        500
+      ],
+      "buttonMedium": [
+        16,
+        22,
+        600
+      ],
+      "buttonSmall": [
+        13,
+        14,
+        500
+      ]
+    },
+    "landing": {
+      "displayHero": [
+        100,
+        110,
+        600
+      ],
+      "display": [
+        64,
+        70,
+        600
+      ],
+      "section": [
+        48,
+        58,
+        600
+      ],
+      "cardTitle": [
+        24,
+        32,
+        500
+      ],
+      "body": [
+        16,
+        26,
+        400
+      ],
+      "caption": [
+        14,
+        22,
+        400
+      ]
+    }
+  },
+  "motion": {
+    "fast": "120ms",
+    "normal": "180ms",
+    "slow": "240ms",
+    "enter": "cubic-bezier(0.16,1,0.3,1)",
+    "exit": "cubic-bezier(0.4,0,1,1)"
+  },
+  "project": {
+    "color-on-brand": "#262626",
+    "color-brand-text": "#9C4209",
+    "color-focus": "#9C4209",
+    "color-control-border": "#85878C",
+    "color-error-text": "#B3261E",
+    "color-success-text": "#187232",
+    "control-height": "36px",
+    "control-touch": "44px",
+    "header-height": "64px",
+    "sidebar-width": "224px",
+    "aside-width": "256px",
+    "content-width": "1320px",
+    "dialog-width": "960px",
+    "form-textarea-min": "88px",
+    "form-textarea-max": "240px",
+    "icon-size": "20px",
+    "weight-regular": "400",
+    "weight-medium": "500",
+    "weight-semibold": "600",
+    "weight-bold": "700",
+    "space-page": "32px",
+    "space-panel": "24px",
+    "radius-panel": "12px",
+    "line-title": "32px",
+    "color-paper": "#FBF8F3",
+    "color-ink": "#222521",
+    "color-ink-soft": "#353A34",
+    "color-on-ink": "#FBF8F3",
+    "color-ink-muted": "#C0C5BB",
+    "color-diagram-line": "#6C766A",
+    "color-paper-border": "#DDD8CF",
+    "color-sage": "#E6EDDF",
+    "space-40": "40px",
+    "landing-width": "1200px",
+    "landing-heading": "clamp(38px, 4.1vw, 60px)",
+    "landing-leading": "1.2",
+    "report-heading": "clamp(28px, 3vw, 40px)",
+    "report-leading": "1.3",
+    "landing-body": "17px",
+    "landing-line": "28px",
+    "logo-size": "42px",
+    "logo-large": "88px",
+    "cover-space": "40px",
+    "motion-entrance": "900ms",
+    "motion-flow": "9s",
+    "shadow-art": "0 24px 64px rgb(34 37 33 / 12%)"
+  },
+  "projectMobile": {
+    "space-page": "16px",
+    "space-panel": "16px",
+    "control-height": "44px",
+    "header-height": "56px",
+    "radius-panel": "12px",
+    "text-caption": "12px",
+    "line-caption": "18px",
+    "landing-heading": "36px",
+    "landing-body": "15px",
+    "landing-line": "26px",
+    "logo-size": "36px",
+    "cover-space": "24px"
+  }
+}

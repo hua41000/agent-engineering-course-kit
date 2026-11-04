@@ -1,0 +1,350 @@
+{
+  "course_name": "企业级Agent工程架构实战营",
+  "curriculum_version": "v5",
+  "course_track": "formal",
+  "source": {
+    "repository": "https://github.com/shanggqm/geektime-course",
+    "path": "course/curriculum/v5/course_outline.md",
+    "base_commit": "0972e2959095cb22b72b212beba356e020ccdffc",
+    "working_tree_sha256": "1360a7ff1757c2e4c10ce07a94e0635fb2f78d4f5ec9da87987541725f2a9d3d",
+    "indexed_at": "2026-11-04",
+    "note": "按课程开发仓库当前 V5 正式课工作树建立导航；总纲仍在课程开发仓库维护。"
+  },
+  "chapters": [
+    {
+      "number": 1,
+      "title": "AI 核心认知篇：从工程到 AI Agent 必须建立的底层认知",
+      "path": "chapters/chapter_01_ai_foundations",
+      "lessons": [
+        {
+          "number": 1,
+          "title": "从训推机理理解 LLM：建立 AI Agent 开发的底层心智模型",
+          "path": "chapters/chapter_01_ai_foundations/lesson_01_what_is_llm",
+          "assets": []
+        },
+        {
+          "number": 2,
+          "title": "从 Agent 本质到架构选型：传统软件、Workflow、Autonomous 与混合架构怎么选？",
+          "path": "chapters/chapter_01_ai_foundations/lesson_02_agent_architecture_selection",
+          "assets": [
+            {
+              "id": "agent-architecture-composer",
+              "title": "Agent Architecture Composer",
+              "path": "chapters/chapter_01_ai_foundations/lesson_02_agent_architecture_selection/agent-architecture-composer",
+              "status": "review"
+            }
+          ]
+        },
+        {
+          "number": 3,
+          "title": "拆解 AI Agent 工程师核心能力模型：找到最优晋级之路",
+          "path": "chapters/chapter_01_ai_foundations/lesson_03_agent_engineer_capabilities",
+          "assets": []
+        },
+        {
+          "number": 4,
+          "title": "AI Native 团队与个人的知与行：",
+          "path": "chapters/chapter_01_ai_foundations/lesson_04_ai_native",
+          "assets": []
+        },
+        {
+          "number": 5,
+          "title": "从根本讲透 LLM 调优技术：PE、CE、HE、LE、GE",
+          "path": "chapters/chapter_01_ai_foundations/lesson_05_llm_optimization",
+          "assets": []
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "title": "底层能力篇：掌握企业级 AI Coding 的道法术器",
+      "path": "chapters/chapter_02_ai_coding",
+      "lessons": [
+        {
+          "number": 6,
+          "title": "企业级 AI Coding 之道：建立以人为本的生产观、角色观和责任观",
+          "path": "chapters/chapter_02_ai_coding/lesson_06_enterprise_ai_coding_principles",
+          "assets": []
+        },
+        {
+          "number": 7,
+          "title": "企业级AI Coding之法：把概率性生成转化为确定性交付",
+          "path": "chapters/chapter_02_ai_coding/lesson_07_ai_coding_methods",
+          "assets": []
+        },
+        {
+          "number": 8,
+          "title": "企业级AI Coding之术：掌握高成功率的 Agent 驾驭与编排技巧",
+          "path": "chapters/chapter_02_ai_coding/lesson_08_ai_coding_tactics",
+          "assets": []
+        },
+        {
+          "number": 9,
+          "title": "企业级AI Coding之器：构建可治理、可验证、可复用的 AI Coding Harness",
+          "path": "chapters/chapter_02_ai_coding/lesson_09_ai_coding_harness",
+          "assets": []
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "title": "贯穿实战立项篇：把真实业务问题转化为可验证、可演进的企业级 Agent 项目",
+      "path": "chapters/chapter_03_project_inception",
+      "lessons": [
+        {
+          "number": 10,
+          "title": "从场景判断到初始架构：完成 DataAgent 立项与第一次架构选型",
+          "path": "chapters/chapter_03_project_inception/lesson_10_dataagent_project_architecture",
+          "assets": []
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "title": "LLM 执行底座篇：构建面向 Agent Harness 的可靠模型执行LLM Runtime",
+      "path": "chapters/chapter_04_llm_runtime",
+      "lessons": [
+        {
+          "number": 11,
+          "title": "从 SDK 直连到 LLM Runtime：什么时候需要统一模型执行边界？",
+          "path": "chapters/chapter_04_llm_runtime/lesson_11_llm_runtime_boundary",
+          "assets": []
+        },
+        {
+          "number": 12,
+          "title": "多模型路由选型：静态绑定、规则路由与动态策略怎么选？",
+          "path": "chapters/chapter_04_llm_runtime/lesson_12_multi_model_routing",
+          "assets": []
+        },
+        {
+          "number": 13,
+          "title": "建立高并发下可靠的模型执行机制",
+          "path": "chapters/chapter_04_llm_runtime/lesson_13_reliable_model_execution",
+          "assets": []
+        },
+        {
+          "number": 14,
+          "title": "从能调用到可运营：建立企业级模型治理体系",
+          "path": "chapters/chapter_04_llm_runtime/lesson_14_model_governance",
+          "assets": []
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "title": "Agent Harness 与 Agent Runtime 架构选型篇：设计自主 + Workflow 的企业级混合系统",
+      "path": "chapters/chapter_05_agent_runtime",
+      "lessons": [
+        {
+          "number": 15,
+          "title": "从任务约束到混合架构：完成 Agent Runtime 核心选型",
+          "path": "chapters/chapter_05_agent_runtime/lesson_15_agent_runtime_selection",
+          "assets": []
+        },
+        {
+          "number": 16,
+          "title": "从 while 循环到 Autonomous Harness：构建可验证的经营分析闭环",
+          "path": "chapters/chapter_05_agent_runtime/lesson_16_autonomous_harness",
+          "assets": []
+        },
+        {
+          "number": 17,
+          "title": "从聊天历史到统一执行模型：让每一步可持久化、可追踪、可重试",
+          "path": "chapters/chapter_05_agent_runtime/lesson_17_execution_model",
+          "assets": []
+        },
+        {
+          "number": 18,
+          "title": "用 Durable Workflow 收口自主分析：实现中断、审批与副作用闭环",
+          "path": "chapters/chapter_05_agent_runtime/lesson_18_durable_workflow",
+          "assets": []
+        },
+        {
+          "number": 19,
+          "title": "Runtime 部署形态选型：什么时候需要从单进程走向分布式？",
+          "path": "chapters/chapter_05_agent_runtime/lesson_19_runtime_deployment",
+          "assets": []
+        },
+        {
+          "number": 20,
+          "title": "以故障为教材：证明 DataAgent 能跨故障完成任务",
+          "path": "chapters/chapter_05_agent_runtime/lesson_20_fault_recovery",
+          "assets": []
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "title": "Agent Context 架构选型与治理篇：为每一步决策构建最小充分、可信可控的上下文",
+      "path": "chapters/chapter_06_agent_context",
+      "lessons": [
+        {
+          "number": 21,
+          "title": "Context 架构选型：从静态 Prompt、检索增强到动态 Context Runtime",
+          "path": "chapters/chapter_06_agent_context/lesson_21_context_architecture",
+          "assets": []
+        },
+        {
+          "number": 22,
+          "title": "经营语义上下文：让 DataAgent 先理解指标，再接触数据",
+          "path": "chapters/chapter_06_agent_context/lesson_22_business_semantics",
+          "assets": []
+        },
+        {
+          "number": 23,
+          "title": "动态上下文装配与预算：让不同 Step 只看到最小充分信息",
+          "path": "chapters/chapter_06_agent_context/lesson_23_context_assembly",
+          "assets": []
+        },
+        {
+          "number": 24,
+          "title": "企业知识与 Agentic Evidence：围绕信息缺口构建可核验的证据包",
+          "path": "chapters/chapter_06_agent_context/lesson_24_agentic_evidence",
+          "assets": []
+        },
+        {
+          "number": 25,
+          "title": "长任务上下文治理：让数小时运行和多 Agent 协作不丢目标、不重做、不漂移",
+          "path": "chapters/chapter_06_agent_context/lesson_25_long_task_context",
+          "assets": []
+        },
+        {
+          "number": 26,
+          "title": "Context Security 与 ContextOps：让上下文策略可审计、可回放、可回归",
+          "path": "chapters/chapter_06_agent_context/lesson_26_context_security",
+          "assets": []
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "title": "Agent 工具 / 技能治理篇：让 Agent 安全、可靠、高效地连接真实世界",
+      "path": "chapters/chapter_07_tools_and_skills",
+      "lessons": [
+        {
+          "number": 27,
+          "title": "从 Function Call 到 Capability Architecture：一项能力应该以什么形态存在？",
+          "path": "chapters/chapter_07_tools_and_skills/lesson_27_capability_architecture",
+          "assets": []
+        },
+        {
+          "number": 28,
+          "title": "Tool Contract 与动态工具供给：让 Agent 选对、传对并读懂结果",
+          "path": "chapters/chapter_07_tools_and_skills/lesson_28_tool_contract",
+          "assets": []
+        },
+        {
+          "number": 29,
+          "title": "从 Tool Call 到 Action Runtime：把高风险行动收进受控执行闭环",
+          "path": "chapters/chapter_07_tools_and_skills/lesson_29_action_runtime",
+          "assets": []
+        },
+        {
+          "number": 30,
+          "title": "Skill Engineering：把一次成功的经营分析固化为领域能力",
+          "path": "chapters/chapter_07_tools_and_skills/lesson_30_skill_engineering",
+          "assets": []
+        },
+        {
+          "number": 31,
+          "title": "MCP 与 CapabilityOps：让跨团队能力可接入、可运营、可审计",
+          "path": "chapters/chapter_07_tools_and_skills/lesson_31_mcp_capability_ops",
+          "assets": []
+        }
+      ]
+    },
+    {
+      "number": 8,
+      "title": "Agent Memory 架构选型与治理篇：让 Agent 有选择地记住、正确地回忆",
+      "path": "chapters/chapter_08_agent_memory",
+      "lessons": [
+        {
+          "number": 32,
+          "title": "Memory Go/No-Go：先判断是否需要记忆，再确定该记什么",
+          "path": "chapters/chapter_08_agent_memory/lesson_32_memory_go_no_go",
+          "assets": []
+        },
+        {
+          "number": 33,
+          "title": "从 Run 事件到可信记忆：构建可审计、可幂等的写入链路",
+          "path": "chapters/chapter_08_agent_memory/lesson_33_memory_write",
+          "assets": []
+        },
+        {
+          "number": 34,
+          "title": "从向量 Top-K 到 Recall Contract：让记忆在正确 Step 进入 Context",
+          "path": "chapters/chapter_08_agent_memory/lesson_34_memory_recall",
+          "assets": []
+        },
+        {
+          "number": 35,
+          "title": "从个性化功能到 MemoryOps：证明记忆有用、无害、可纠正、可删除",
+          "path": "chapters/chapter_08_agent_memory/lesson_35_memory_ops",
+          "assets": []
+        }
+      ]
+    },
+    {
+      "number": 9,
+      "title": "Agent 评测与受控进化篇：用科学的评测方法论驱动持续有效进化",
+      "path": "chapters/chapter_09_evaluation_and_evolution",
+      "lessons": [
+        {
+          "number": 36,
+          "title": "从“看起来不错”到质量契约：定义 DataAgent 什么才算真正成功",
+          "path": "chapters/chapter_09_evaluation_and_evolution/lesson_36_quality_contract",
+          "assets": []
+        },
+        {
+          "number": 37,
+          "title": "从样例集合到可复现基准：构建不会欺骗自己的 Dataset 与 Fixture",
+          "path": "chapters/chapter_09_evaluation_and_evolution/lesson_37_eval_datasets",
+          "assets": []
+        },
+        {
+          "number": 38,
+          "title": "从“有标准”到“能自动测”：建设可信的 Multi-Grader 与 Batch Eval Runner",
+          "path": "chapters/chapter_09_evaluation_and_evolution/lesson_38_eval_runner",
+          "assets": []
+        },
+        {
+          "number": 39,
+          "title": "从“分数下降”到“根因被证明”：用 Trace、Replay 与 Ablation 完成故障诊断",
+          "path": "chapters/chapter_09_evaluation_and_evolution/lesson_39_trace_replay_diagnosis",
+          "assets": []
+        },
+        {
+          "number": 40,
+          "title": "从离线提升到安全发布：建立 Regression Gate 与受控进化闭环",
+          "path": "chapters/chapter_09_evaluation_and_evolution/lesson_40_regression_gate",
+          "assets": []
+        }
+      ]
+    },
+    {
+      "number": 10,
+      "title": "完结篇：面向未来的 Agent 工程判断",
+      "path": "chapters/chapter_10_future_and_capstone",
+      "lessons": [
+        {
+          "number": 41,
+          "title": "DataAgent 架构选型答辩与全课程总结：从 Agent Demo 到企业级 Agent 系统",
+          "path": "chapters/chapter_10_future_and_capstone/lesson_41_architecture_defense",
+          "assets": []
+        },
+        {
+          "number": 42,
+          "title": "人与 AI 的四种关系：当 AI 从工具变成执行者，人的责任发生了什么变化？",
+          "path": "chapters/chapter_10_future_and_capstone/lesson_42_human_ai_relationships",
+          "assets": []
+        },
+        {
+          "number": 43,
+          "title": "面向未来一年：AI Agent 会如何发展，AI Agent 工程师将面临什么挑战？",
+          "path": "chapters/chapter_10_future_and_capstone/lesson_43_agent_future",
+          "assets": []
+        }
+      ]
+    }
+  ]
+}

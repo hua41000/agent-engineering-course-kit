@@ -1,0 +1,81 @@
+{
+  "skill": "bxy-core-design-system",
+  "version": "0.2.4",
+  "profile": "adaptive",
+  "motionStrategy": "expressive-landing; restrained-workspace; static-report",
+  "motionSourcePriority": [
+    "ReactBits",
+    "OriginKit"
+  ],
+  "installedAt": "2026-09-22T09:19:41.197Z",
+  "tokenSource": "bxy-design-tokens.json",
+  "cssAdapter": "bxy-design-tokens.css",
+  "iconSystem": {
+    "default": "Google Material Symbols Rounded",
+    "library": "https://fonts.google.com/icons",
+    "loading": "self-hosted",
+    "cssApiTemplate": null,
+    "optimization": null,
+    "selfHosted": {
+      "font": "assets/icons/material-symbols-rounded.woff2",
+      "css": "assets/icons/material-symbols-rounded.css",
+      "subset": [
+        "add",
+        "arrow_back",
+        "arrow_forward",
+        "check_circle",
+        "close",
+        "delete",
+        "download",
+        "error",
+        "info",
+        "menu_book",
+        "more_horiz",
+        "print",
+        "save",
+        "upload_file"
+      ],
+      "sourceSha256": "fb133d3ec8288e46a570bd987a2e6c1e90caa1eb174660ac8f0c9c04ddb83f16",
+      "subsetSha256": "3d2514e6fc0c5571472ff4e228612e6d3eb36fb8f21fa9e826c27973a531d76f",
+      "axes": {
+        "FILL": 0,
+        "wght": 400,
+        "GRAD": 0,
+        "opsz": 24
+      }
+    },
+    "morph": "not-used: native controls; no icon-shape transition"
+  },
+  "applePrototypeAssets": null,
+  "presentationCss": "../src/presentation.css",
+  "diagramSource": "../src/visuals.mjs",
+  "brandAsset": {
+    "file": "assets/brand/composer-mark.png",
+    "source": "built-in imagegen",
+    "generatedAt": "2026-09-22",
+    "sha256": "7867963b622e0199058c36af3121639c023689d563e3f8546d663f11e66abbff",
+    "promptRecord": "assets/brand/README.md",
+    "delivery": "embedded-data-url"
+  },
+  "motionImplementation": {
+    "source": "original CSS and SVG",
+    "inspiration": "https://github.com/DavidHDev/react-bits/blob/main/src/content/Animations/AnimatedContent/AnimatedContent.jsx",
+    "copiedSource": false,
+    "reducedMotion": true,
+    "pauseControl": true,
+    "pauseWhenHidden": true,
+    "pauseWhenOffscreen": true
+  },
+  "patternDiagrams": {
+    "source": "../src/pattern-visuals.mjs",
+    "count": 20,
+    "style": "minimal-orange-black",
+    "format": "inline-svg",
+    "origin": "original instructional diagrams",
+    "consumers": [
+      "report",
+      "handbook"
+    ],
+    "offline": true
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "name": "agent-engineering-course-kit",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "企业级Agent工程架构实战营公开课程配套内容",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "node scripts/check.mjs && npm run test:composer",
+    "test:composer": "npm test --prefix chapters/chapter_01_ai_foundations/lesson_02_agent_architecture_selection/agent-architecture-composer",
+    "build": "npm run build --prefix chapters/chapter_01_ai_foundations/lesson_02_agent_architecture_selection/agent-architecture-composer",
+    "start": "npm start --prefix chapters/chapter_01_ai_foundations/lesson_02_agent_architecture_selection/agent-architecture-composer",
+    "smoke": "node scripts/smoke.mjs"
+  },
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shanggqm/agent-engineering-course-kit.git"
+  }
+}

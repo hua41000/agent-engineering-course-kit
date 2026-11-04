@@ -1,0 +1,93 @@
+id: agent-architecture-composer
+title: Agent Architecture Composer
+course_name: 企业级Agent工程架构实战营
+scope: cross-course-learner-tool
+status: review
+owner: guomeiqing
+updated: 2026-11-04
+path_base: repository-root
+
+depends_on:
+  curriculum: https://github.com/shanggqm/geektime-course/blob/main/course/curriculum/v5/course_outline.md
+  lesson_outline: https://github.com/shanggqm/geektime-course/blob/main/lessons/v5/formal/lesson_02_agent_architecture_selection/brief/lesson_outline.md
+  research_synthesis: https://github.com/shanggqm/geektime-course/blob/main/lessons/v5/formal/lesson_02_agent_architecture_selection/research/synthesis.md
+  slide_blueprint: https://github.com/shanggqm/geektime-course/blob/main/lessons/v5/formal/lesson_02_agent_architecture_selection/design/slide_blueprint.md
+
+canonical:
+  control_page: chapters/chapter_01_ai_foundations/lesson_02_agent_architecture_selection/agent-architecture-composer/README.md
+  prd: chapters/chapter_01_ai_foundations/lesson_02_agent_architecture_selection/agent-architecture-composer/docs/prd.md
+  methodology: chapters/chapter_01_ai_foundations/lesson_02_agent_architecture_selection/agent-architecture-composer/docs/methodology.md
+  technical_design: chapters/chapter_01_ai_foundations/lesson_02_agent_architecture_selection/agent-architecture-composer/docs/technical-design.md
+  delivery_management: chapters/chapter_01_ai_foundations/lesson_02_agent_architecture_selection/agent-architecture-composer/docs/delivery-management.md
+  ui_contract: chapters/chapter_01_ai_foundations/lesson_02_agent_architecture_selection/agent-architecture-composer/design-system/BXY_DESIGN_SYSTEM.md
+  ui_tokens: chapters/chapter_01_ai_foundations/lesson_02_agent_architecture_selection/agent-architecture-composer/design-system/bxy-design-tokens.json
+  reliability_review: chapters/chapter_01_ai_foundations/lesson_02_agent_architecture_selection/agent-architecture-composer/docs/reliability-review.md
+
+reliability_review:
+  outcome: needs_revision
+  open_findings: {P1: 3, P2: 4}
+  evidence_kind: document-review-and-manual-scenarios
+  runtime_validated: true
+  disposition: 原设计评审保留；首版按用户要求简化，未宣称全部发现已关闭。
+
+implementation:
+  status: review
+  edition: 2026-09-22-preview
+  web: chapters/chapter_01_ai_foundations/lesson_02_agent_architecture_selection/agent-architecture-composer/src/index.html
+  ui_profile: bxy-adaptive-light
+  landing_motion: expressive
+  brand_asset: chapters/chapter_01_ai_foundations/lesson_02_agent_architecture_selection/agent-architecture-composer/design-system/assets/brand/composer-mark.png
+  presentation: chapters/chapter_01_ai_foundations/lesson_02_agent_architecture_selection/agent-architecture-composer/src/presentation.css
+  pattern_diagrams: chapters/chapter_01_ai_foundations/lesson_02_agent_architecture_selection/agent-architecture-composer/src/pattern-visuals.mjs
+  pattern_diagram_count: 20
+  architecture_visuals: chapters/chapter_01_ai_foundations/lesson_02_agent_architecture_selection/agent-architecture-composer/src/visuals.mjs
+  ui_manifest: chapters/chapter_01_ai_foundations/lesson_02_agent_architecture_selection/agent-architecture-composer/design-system/bxy-design-manifest.json
+  assessment_model: task-properties-and-project-constraints
+  question_count: 32
+  multi_select_question_count: 14
+  session_schema_version: 2
+  accepted_session_versions: [1, 2]
+  questionnaire_groups: 5
+  context_rules: chapters/chapter_01_ai_foundations/lesson_02_agent_architecture_selection/agent-architecture-composer/src/context.mjs
+  shared_core: chapters/chapter_01_ai_foundations/lesson_02_agent_architecture_selection/agent-architecture-composer/src/core.mjs
+  skill: chapters/chapter_01_ai_foundations/lesson_02_agent_architecture_selection/agent-architecture-composer/skill/SKILL.md
+  build_command: npm run build --prefix chapters/chapter_01_ai_foundations/lesson_02_agent_architecture_selection/agent-architecture-composer
+  generated_directory: chapters/chapter_01_ai_foundations/lesson_02_agent_architecture_selection/agent-architecture-composer/dist
+  note: 独立公开仓库中的开发预览；生成物不入 Git，产品仍为 review。
+
+consumers:
+  current:
+    - https://github.com/shanggqm/geektime-course/blob/main/lessons/v5/formal/lesson_02_agent_architecture_selection
+  planned_curriculum_lesson_numbers: [10, 15, 19, 41]
+
+deliverables:
+  - type: offline-web-source
+    path: chapters/chapter_01_ai_foundations/lesson_02_agent_architecture_selection/agent-architecture-composer/src/index.html
+    status: review
+  - type: skill-source
+    path: chapters/chapter_01_ai_foundations/lesson_02_agent_architecture_selection/agent-architecture-composer/skill/SKILL.md
+    status: review
+  - type: product-requirements
+    path: chapters/chapter_01_ai_foundations/lesson_02_agent_architecture_selection/agent-architecture-composer/docs/prd.md
+    status: review
+  - type: methodology-design
+    path: chapters/chapter_01_ai_foundations/lesson_02_agent_architecture_selection/agent-architecture-composer/docs/methodology.md
+    status: review
+  - type: technical-design
+    path: chapters/chapter_01_ai_foundations/lesson_02_agent_architecture_selection/agent-architecture-composer/docs/technical-design.md
+    status: review
+  - type: delivery-management
+    path: chapters/chapter_01_ai_foundations/lesson_02_agent_architecture_selection/agent-architecture-composer/docs/delivery-management.md
+    status: review
+  - type: design-review
+    path: chapters/chapter_01_ai_foundations/lesson_02_agent_architecture_selection/agent-architecture-composer/docs/reliability-review.md
+    status: review
+
+release:
+  version: null
+  commit: null
+  released_at: null
+  license: UNLICENSED
+  download_url: null
+
+source_repository: https://github.com/shanggqm/agent-engineering-course-kit
