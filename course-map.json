@@ -60,6 +60,14 @@
       "number": 2,
       "title": "底层能力篇：掌握企业级 AI Coding 的道法术器",
       "path": "chapters/chapter_02_ai_coding",
+      "assignments": [
+        {
+          "id": "chapter-02-dsh-plugin-sdd-assignment",
+          "title": "用 my-ai-infra SDD 为 DSH 开发一个插件",
+          "path": "chapters/chapter_02_ai_coding/assignment",
+          "status": "review"
+        }
+      ],
       "lessons": [
         {
           "number": 6,

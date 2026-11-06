@@ -22,6 +22,8 @@ npm start
 
 ## 按篇章查找
 
+第二篇作业：[用 my-ai-infra SDD 为 DSH 开发一个插件](chapters/chapter_02_ai_coding/assignment/README.md)。
+
 | 篇章 | 主题 | 课次 |
 |---|---|---|
 | 01 | [AI 核心认知篇：从工程到 AI Agent 必须建立的底层认知](chapters/chapter_01_ai_foundations/README.md) | 01–05 |

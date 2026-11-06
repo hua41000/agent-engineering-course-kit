@@ -2,6 +2,8 @@
 
 [返回课程配套入口](../../README.md)
 
+篇章作业：[用 my-ai-infra SDD 为 DSH 开发一个插件](assignment/README.md)。自由选题，完整练习需求、设计、评审、实现与验收，提交自己的 DSH Fork 仓库地址。文档附社区插件清单与 my-ai-infra SDD 插件选题建议。
+
 | 课次 | 主题 | 配套内容 |
 |---|---|---|
 | 06 | [企业级 AI Coding 之道：建立以人为本的生产观、角色观和责任观](lesson_06_enterprise_ai_coding_principles/README.md) | 待补充 |

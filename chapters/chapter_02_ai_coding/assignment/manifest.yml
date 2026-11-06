@@ -1,0 +1,24 @@
+id: chapter-02-dsh-plugin-sdd-assignment
+title: 第二篇作业：用 my-ai-infra SDD 为 DSH 开发一个插件
+course_name: 企业级Agent工程架构实战营
+curriculum_version: v5
+course_track: formal
+scope: chapter-02
+lesson_numbers: [6, 7, 8, 9]
+status: review
+owner: guomeiqing
+updated: 2026-11-06
+path_base: repository-root
+canonical:
+  assignment: chapters/chapter_02_ai_coding/assignment/README.md
+content:
+  community_plugin_reference_date: 2026-11-06
+  community_plugin_count: 9
+  suggested_direction: my-ai-infra-sdd-workbench-for-dsh
+depends_on:
+  chapter_index: chapters/chapter_02_ai_coding/README.md
+  dsh: https://github.com/deepseek-ai/deepseek-harness
+  my_ai_infra: https://github.com/shanggqm/my-ai-infra
+submission:
+  type: github-fork-repository-url
+  review_focus: [plugin-outcome, sdd-process-artifacts]

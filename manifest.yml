@@ -5,7 +5,7 @@ curriculum_version: v5
 course_track: formal
 status: active
 owner: guomeiqing
-updated: 2026-11-04
+updated: 2026-11-06
 path_base: repository-root
 repository: https://github.com/shanggqm/agent-engineering-course-kit
 website: https://shanggqm.github.io/agent-engineering-course-kit/agent-architecture-composer/
@@ -19,6 +19,9 @@ navigation:
   chapter_count: 10
   lesson_count: 43
 deliverables:
+  - id: chapter-02-dsh-plugin-sdd-assignment
+    path: chapters/chapter_02_ai_coding/assignment/manifest.yml
+    status: review
   - id: agent-architecture-composer
     path: chapters/chapter_01_ai_foundations/lesson_02_agent_architecture_selection/agent-architecture-composer/manifest.yml
     status: review
