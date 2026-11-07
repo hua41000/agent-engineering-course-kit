@@ -117,7 +117,14 @@
           "number": 11,
           "title": "从 SDK 直连到 LLM Runtime：什么时候需要统一模型执行边界？",
           "path": "chapters/chapter_04_llm_runtime/lesson_11_llm_runtime_boundary",
-          "assets": []
+          "assets": [
+            {
+              "id": "lesson-11-learning-materials",
+              "title": "第 11 课 LLM Runtime 学习资料",
+              "path": "chapters/chapter_04_llm_runtime/lesson_11_llm_runtime_boundary/learning-materials",
+              "status": "review"
+            }
+          ]
         },
         {
           "number": 12,
@@ -136,7 +143,14 @@
           "number": 13,
           "title": "建立高并发下可靠的模型执行机制",
           "path": "chapters/chapter_04_llm_runtime/lesson_13_reliable_model_execution",
-          "assets": []
+          "assets": [
+            {
+              "id": "lesson-13-learning-materials",
+              "title": "第 13 课可靠模型执行学习资料",
+              "path": "chapters/chapter_04_llm_runtime/lesson_13_reliable_model_execution/learning-materials",
+              "status": "approved"
+            }
+          ]
         },
         {
           "number": 14,

@@ -1,0 +1,39 @@
+id: lesson-11-learning-materials
+title: 第 11 课 LLM Runtime 学习资料
+course_name: 企业级Agent工程架构实战营
+curriculum_version: v5
+course_track: formal
+chapter_number: 4
+lesson_number: 11
+scope: lesson-learner-delivery
+status: review
+owner: guomeiqing
+updated: 2026-11-05
+path_base: asset-directory
+
+source:
+  repository: https://github.com/shanggqm/geektime-course
+  feature: learner-kit/code/compass/mai-specs/993-lesson-11-llm-runtime
+  path: learner-kit/code/compass/mai-specs/993-lesson-11-llm-runtime/lesson-11-learning-materials.zip
+  commit: d08488b0b9f9dd2614702426f053e1421e9182c9
+  tag: compass/L11-complete
+  role: derived-distribution-copy
+
+deliverables:
+  - type: learner-materials-zip
+    path: lesson-11-learning-materials.zip
+    status: review
+    bytes: 5718839
+    sha256: 4e80ad9e259342ac25b77991a8e6aa9fb83eef3aea3d6939c599de622062633f
+    storage: git-lfs
+    contains:
+      - PRD.md
+      - TECH_DESIGN.md
+      - TECH_DESIGN.html
+      - README.md
+      - visuals/
+
+verification:
+  source_copy_sha256: matched
+  archive_integrity: passed
+  note: 并发与延迟指标待压测；供应商真实账号测试按工程进度独立记录。

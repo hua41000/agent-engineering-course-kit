@@ -1,0 +1,2 @@
+# Requested final learner handouts are distributed as Git LFS snapshots.
+/chapters/chapter_04_llm_runtime/lesson_11_llm_runtime_boundary/learning-materials/lesson-11-learning-materials.zip filter=lfs diff=lfs merge=lfs -text
