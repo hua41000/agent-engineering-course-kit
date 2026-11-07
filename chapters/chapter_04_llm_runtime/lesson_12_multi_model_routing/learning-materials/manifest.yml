@@ -1,0 +1,43 @@
+id: lesson-12-learning-materials
+title: 第 12 课多模型路由学习资料
+course_name: 企业级Agent工程架构实战营
+curriculum_version: v5
+course_track: formal
+chapter_number: 4
+lesson_number: 12
+scope: lesson-learner-delivery
+status: review
+owner: guomeiqing
+updated: 2026-11-07
+path_base: asset-directory
+
+source:
+  repository: https://github.com/shanggqm/geektime-course
+  feature: learner-kit/code/compass/mai-specs/992-lesson-12-multi-model-routing
+  path: learner-kit/code/compass/mai-specs/992-lesson-12-multi-model-routing/lesson-12-learning-materials.zip
+  commit: 3bfd6cd3a7231568adb6fd16b83f2d488f65163e
+  tag: compass/L12-complete
+  code_baseline: compass/L13-complete
+  role: derived-distribution-copy
+
+deliverables:
+  - type: learner-materials-zip
+    path: lesson-12-learning-materials.zip
+    status: review
+    bytes: 228445
+    sha256: 1b4945f4db71077f619a7381f0f028945776eec553c07ff3c85bb369b954046c
+    storage: git
+    contains:
+      - PRD.md
+      - TECH_DESIGN.md
+      - TECH_DESIGN.html
+      - README.md
+
+verification:
+  source_copy_sha256: matched
+  archive_integrity: passed
+  offline_reading: passed
+  requirements_count: 38
+  diagrams: 6
+  engineering_acceptance: pnpm check、pnpm build、PostgreSQL 集成与浏览器路由回归通过。
+  note: 真实 JEV 有效分类、正式准确率、阈值校准和性能收益待验证。

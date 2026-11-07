@@ -2,4 +2,4 @@
 
 [返回篇章](../README.md) · [全课导航](../../../README.md)
 
-配套内容将随课程进度补充。
+[第 12 课学习资料包](learning-materials/README.md)包含最终 PRD、Markdown 技术方案及离线 HTML。
