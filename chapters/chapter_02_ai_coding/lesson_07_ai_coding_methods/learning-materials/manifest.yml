@@ -1,0 +1,32 @@
+id: lesson-07-learning-materials
+title: 第 07 课 AI Coding 之法学习资料
+course_name: 企业级Agent工程架构实战营
+curriculum_version: v5
+course_track: formal
+chapter_number: 2
+lesson_number: 7
+scope: lesson-learner-delivery
+status: review
+owner: guomeiqing
+updated: 2026-11-09
+path_base: asset-directory
+
+source:
+  repository: https://github.com/shanggqm/geektime-course
+  path: learner-kit/code/ai-coding/lesson_07_ai_coding_methods
+  commit: 42b0e2622749350110d67bcceccb1e081c2a0ca8
+  role: derived-distribution-copy
+
+deliverables:
+  - type: learner-materials-index
+    path: README.md
+  - type: offline-html-index
+    path: index.html
+  - type: topic-materials
+    path: sdd/
+  - type: topic-materials
+    path: ce/
+  - type: topic-materials
+    path: verify/
+  - type: topic-materials
+    path: skill/

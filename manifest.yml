@@ -5,7 +5,7 @@ curriculum_version: v5
 course_track: formal
 status: active
 owner: guomeiqing
-updated: 2026-11-06
+updated: 2026-11-09
 path_base: repository-root
 repository: https://github.com/shanggqm/agent-engineering-course-kit
 website: https://shanggqm.github.io/agent-engineering-course-kit/agent-architecture-composer/
@@ -24,4 +24,10 @@ deliverables:
     status: review
   - id: agent-architecture-composer
     path: chapters/chapter_01_ai_foundations/lesson_02_agent_architecture_selection/agent-architecture-composer/manifest.yml
+    status: review
+  - id: lesson-07-learning-materials
+    path: chapters/chapter_02_ai_coding/lesson_07_ai_coding_methods/learning-materials/manifest.yml
+    status: review
+  - id: lesson-08-learning-materials
+    path: chapters/chapter_02_ai_coding/lesson_08_ai_coding_tactics/learning-materials/manifest.yml
     status: review

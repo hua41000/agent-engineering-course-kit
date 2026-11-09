@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light"><title>Hooks实战经验 · 第 08 课</title>
+<style>
+:root{--orange:#c94a05;--orange-light:#fff0e6;--ink:#242424;--muted:#64615d;--line:#e5e1db;--paper:#faf9f6;--white:#fff;--code:#242628;--code-text:#f3f1ec;--focus:#a83d00;--radius:12px}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:28px}body{margin:0;background:var(--paper);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.7}a{color:var(--orange);text-underline-offset:4px}button,input{font:inherit}button{cursor:pointer}a,button,input,summary{outline-offset:4px}a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible,pre:focus-visible{outline:2px solid var(--focus)}[hidden]{display:none!important}.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}.skip{position:absolute;top:-100px;left:16px;background:white;padding:10px;z-index:5}.skip:focus{top:10px}
+.shell{max-width:1500px;margin:auto;display:grid;grid-template-columns:252px minmax(0,1fr);gap:48px;padding:36px 48px 50px}.sidebar{position:sticky;top:30px;align-self:start;max-height:calc(100vh - 60px);overflow:auto;padding-right:18px;border-right:1px solid var(--line)}.course{font-size:13px;line-height:1.7;color:var(--muted);margin:0 0 24px}.lesson{display:block;color:var(--ink);font-weight:600;font-size:15px;margin-top:5px}.toc summary{font-size:14px;font-weight:650;list-style:none;padding:0 8px 12px;pointer-events:none}.toc summary::-webkit-details-marker{display:none}.toc nav{display:grid;gap:4px}.toc a{display:flex;align-items:center;gap:10px;color:var(--muted);font-size:14px;line-height:1.4;text-decoration:none;padding:10px 8px;border-radius:7px;min-height:42px}.toc a span{font-family:ui-monospace,monospace;width:22px;color:var(--orange);font-weight:650}.toc a:hover{background:#eeebe6;color:var(--ink)}.toc a[aria-current=true]{background:var(--orange-light);color:var(--orange);font-weight:650}.home-link{display:inline-block;margin:0 0 18px;font-size:14px;padding:6px 0}.source-link{display:block;margin:24px 8px 0;font-size:13px}.main{min-width:0}.page-heading{border-bottom:1px solid var(--line);padding:0 0 27px;margin-bottom:28px}.page-heading h1{font-size:38px;letter-spacing:-1px;line-height:1.3;margin:0 0 12px;font-weight:720}.page-heading p{margin:0;color:var(--muted);max-width:750px;font-size:16px}.tools{display:flex;align-items:center;gap:12px;margin-top:24px}.search{position:relative;flex:1;max-width:530px}.search input{width:100%;height:46px;border:1px solid #d4cfc7;border-radius:8px;padding:10px 70px 10px 14px;background:var(--white);color:var(--ink);font-size:14px}.clear{position:absolute;right:6px;top:6px;border:0;background:transparent;color:var(--muted);height:34px;padding:0 10px;border-radius:5px}.clear:hover{background:var(--paper)}.print{height:46px;padding:0 17px;border:1px solid #d4cfc7;background:transparent;border-radius:8px;color:var(--ink);font-size:14px}.print:hover{background:var(--white)}.results{font-size:13px;color:var(--muted);margin:12px 0 0!important;min-height:22px}
+.practice{scroll-margin-top:28px;background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:28px;margin:0 0 24px}.practice-heading{display:flex;align-items:center;gap:12px}.letter{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border:1px solid #e4a381;border-radius:50%;color:var(--orange);font:600 19px ui-monospace,monospace;flex-shrink:0}.practice h2{font-size:24px;font-weight:650;line-height:1.4;margin:0;overflow-wrap:anywhere}.permalink{font:13px ui-monospace,monospace;margin-left:auto;text-decoration:none;color:var(--muted);padding:8px}.description{font-size:15px;line-height:1.9;margin:18px 0 22px;color:#4e4b47}.description code{background:var(--paper);border:1px solid var(--line);padding:1px 4px;border-radius:4px;font-size:.9em}.description a{white-space:nowrap}.practice-meta{font-size:12px;line-height:1.8;color:var(--muted);margin:18px 0 0;padding-top:12px;border-top:1px solid var(--line);overflow-wrap:anywhere}.practice-meta strong{font-weight:500}.practice-meta a{color:inherit}.practice-meta code{font-size:inherit}.cases{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:stretch}.case{min-width:0;background:var(--code);border-radius:9px;overflow:hidden;display:flex;flex-direction:column}.case-bar{display:flex;align-items:center;gap:8px;justify-content:space-between;padding:10px 14px;border-bottom:1px solid #424548;min-height:50px}.case h3{margin:0;font-size:12px;font-weight:600;color:#ded9d1;letter-spacing:.1px}.good h3{color:#a9dbbd}.bad h3{color:#f1ba96}.copy{font-size:12px;min-width:48px;height:30px;padding:0 8px;color:#e4e1dc;background:#36393c;border:1px solid #565a5e;border-radius:5px}.copy:hover{background:#4c5054}.copy:focus-visible,pre:focus-visible{outline-color:#ffb482}.case pre{margin:0;padding:18px 18px 22px;color:var(--code-text);font:14px/1.95 ui-monospace,SFMono-Regular,Menlo,Consolas,"PingFang SC","Microsoft YaHei",monospace;white-space:pre-wrap;overflow-wrap:anywhere;tab-size:2;flex:1}.case pre code{font:inherit}.empty{padding:45px 20px;border:1px dashed var(--line);text-align:center;border-radius:var(--radius)}.empty p{color:var(--muted)}footer{border-top:1px solid var(--line);padding-top:22px;color:var(--muted);font-size:13px;display:flex;gap:20px;justify-content:space-between}footer p{margin:0;max-width:750px}.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:var(--ink);color:white;padding:10px 20px;border-radius:8px;font-size:14px;z-index:10;max-width:90vw}
+@media(min-width:1500px){.shell{gap:60px}.case pre{font-size:15px}}@media(max-width:1100px){.shell{padding:28px;gap:28px;grid-template-columns:220px minmax(0,1fr)}.cases{grid-template-columns:1fr}.practice{padding:24px}}@media(max-width:700px){html{scroll-padding-top:18px}.shell{display:block;padding:20px 16px 35px}.sidebar{position:static;max-height:none;overflow:visible;padding:0;border:0;margin-bottom:24px}.course{margin-bottom:16px;font-size:12px}.lesson{font-size:13px}.toc{border:1px solid var(--line);border-radius:8px;background:white}.toc summary{padding:12px 14px;pointer-events:auto;cursor:pointer;display:list-item;list-style:disclosure-closed;list-style-position:inside}.toc[open] summary{list-style-type:disclosure-open}.toc nav{padding:0 8px 8px;grid-template-columns:1fr 1fr;gap:3px}.toc a{font-size:12px;padding:10px 6px;gap:4px}.toc a span{width:16px}.source-link{display:none}.page-heading{padding-bottom:22px}.page-heading h1{font-size:30px}.page-heading p{font-size:14px}.tools{gap:8px}.print{padding:0 12px}.practice{padding:20px 16px;margin-bottom:18px}.practice h2{font-size:20px}.letter{width:32px;height:32px;font-size:17px}.permalink{font-size:11px;padding:4px}.description{font-size:14px}.case pre{font-size:13px;padding:16px;line-height:1.9}.case-bar{padding:9px 12px}.case h3{font-size:12px}footer{display:block}footer a{display:inline-block;margin-top:12px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}@media print{body{background:white}.shell{display:block;max-width:none;padding:0}.sidebar,.tools,.results,.copy,.permalink,.toast,.skip{display:none!important}.page-heading h1{font-size:24pt}.page-heading p{font-size:10pt}.practice{break-inside:avoid;border:1px solid #bbb;padding:15px;margin-bottom:18px}.practice h2{font-size:16pt}.description{font-size:10pt;line-height:1.6}.practice-meta{font-size:8pt;line-height:1.6}.cases{grid-template-columns:1fr 1fr;gap:12px}.case{background:white;border:1px solid #aaa}.case h3,.good h3,.bad h3{color:black}.case-bar{border-color:#aaa}.case pre{color:black;font-size:9pt;line-height:1.65;padding:12px}.letter{font-size:13pt}.source-link,footer a{display:none}.empty{display:none}}
+
+/* Rich examples, Hook labels and comparison tables share the existing theme. */
+.hook-row{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 12px;margin-top:18px;padding:10px 13px;border-radius:7px;background:var(--orange-light);font-size:13px;line-height:1.9}.hook-row>strong{color:var(--orange);font-size:12px;flex-shrink:0}.hook-row p{margin:0;min-width:0;overflow-wrap:anywhere}.hook-row code{font-size:12px}.description p{margin:0 0 12px}.description p:last-child{margin-bottom:0}.cases{align-items:start}.case-body{padding:16px 18px 20px;color:var(--code-text);font:14px/1.9 -apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;overflow-wrap:anywhere}.case-body p{margin:0 0 14px}.case-body>:last-child{margin-bottom:0}.case-body code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.9em}.case-body :not(pre)>code{background:#36393c;padding:2px 4px;border-radius:4px}.case-body pre{padding:12px 14px;margin:12px 0 16px;background:#191c1e;border:1px solid #45494c;border-radius:6px;font-size:13px;line-height:1.8}.case-body pre code{font:inherit}.case-body blockquote{margin:12px 0 16px;padding:8px 14px;border-left:3px solid #df9d73;background:#303337}.case-body blockquote p{margin:0}.case-body h4{font-size:18px;line-height:1.5;color:#a9dbbd;margin:22px 0 4px}.case-body p:has(>strong:only-child){margin:18px 0 4px;color:#a9dbbd}.case-body ul{padding-left:20px;margin:8px 0 14px}.supplement{margin:22px 0}.supplement h3{font-size:16px;margin:0 0 12px}.table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:8px;max-width:100%}.table-wrap:focus-visible{outline:2px solid var(--focus);outline-offset:3px}table{border-collapse:collapse;width:100%;font-size:14px;line-height:1.7}th,td{text-align:left;vertical-align:top;padding:12px 14px;border-bottom:1px solid var(--line);overflow-wrap:anywhere}th{background:var(--orange-light);font-size:13px;font-weight:600}tr:last-child td{border-bottom:0}tbody tr:nth-child(even){background:#faf9f7}td:first-child{font-weight:550}td code{font-size:12px}.products th:first-child{width:17%}.products th:last-child{width:26%}.implementation{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:24px}.implementation>.supplement{min-width:0;margin-bottom:0}.flow pre{padding:16px;background:var(--paper);border:1px solid var(--line);border-radius:8px;font:13px/1.7 ui-monospace,SFMono-Regular,Menlo,Consolas,"PingFang SC",monospace;white-space:pre-wrap;overflow-wrap:anywhere;margin:0}.notes ul{padding-left:20px;font-size:14px;line-height:1.9;margin:0}.notes li{margin-bottom:12px}.practice-meta p{display:inline;margin:0}.overview{background:white;border:1px solid var(--line);border-radius:var(--radius);padding:28px;margin:28px 0}.overview h2{font-size:22px;margin:0 0 18px}.overview h2:not(:first-child){margin-top:28px}.overview p,.overview li{font-size:14px;line-height:1.9}.overview ul{padding-left:20px}.overview li{margin-bottom:12px}.overview code{overflow-wrap:anywhere}
+@media(max-width:1100px){.implementation{grid-template-columns:1fr}.implementation>.supplement{margin-top:20px}.implementation>.notes{margin-top:0}}
+@media(max-width:700px){.hook-row{font-size:12px}.case-body{font-size:13px;padding:14px 16px 18px}.case-body pre{font-size:12px;padding:12px}.overview{padding:20px 16px}.table-wrap table{min-width:490px}th,td{padding:10px;font-size:12px}.flow pre{font-size:12px}.overview h2{font-size:20px}}
+@media print{.practice{break-inside:auto}.practice-heading,.hook-row,h3,h4{break-after:avoid}.case{break-inside:avoid}.case-body{color:black;font-size:9pt;line-height:1.6}.case-body h4,.case-body p:has(>strong:only-child){color:black}.case-body pre,.case-body :not(pre)>code,.case-body blockquote{background:white;color:black;border-color:#aaa}.case-body pre{font-size:8pt}.cases{grid-template-columns:1fr}.implementation{grid-template-columns:1fr 1fr}.table-wrap{overflow:visible}.table-wrap table{min-width:0;font-size:9pt}th,td{padding:8px}.overview{padding:15px}.overview h2{font-size:16pt}.overview p,.overview li,.notes li{font-size:9pt}.flow pre{font-size:8pt}.overview,.supplement{break-inside:avoid}}
+</style></head><body id="top"><a class="skip" href="#main">跳至正文</a><div class="shell"><aside class="sidebar"><a class="home-link" href="../index.html">返回实战经验首页</a><p class="course">企业级Agent工程架构实战营<span class="lesson">第 08 课 · AI Coding 之术</span></p><details class="toc" open><summary>4 条实践 · 快速定位</summary><nav aria-label="最佳实践目录"><a href="#practice-A" data-id="A"><span>A</span>修改后自动格式化</a><a href="#practice-B" data-id="B"><span>B</span>高风险操作执行前拦截</a><a href="#practice-C" data-id="C"><span>C</span>自动恢复长任务上下文</a><a href="#practice-D" data-id="D"><span>D</span>每日自动复盘与记忆进化</a></nav></details><a class="source-link" href="best_practices.md">阅读 Markdown 原文</a></aside><main class="main" id="main"><header class="page-heading"><h1>Hooks实战经验</h1><p>用 4 项实践，把自动格式化、操作约束、上下文恢复与每日复盘接入研发工作流。</p><div class="tools"><div class="search"><label class="sr-only" for="search">搜索标题、描述或案例</label><input type="search" id="search" placeholder="搜索标题、描述或案例…" autocomplete="off"><button type="button" class="clear" hidden>清除</button></div><button type="button" class="print">打印 / PDF</button></div><p class="results" aria-live="polite">全部 4 条实践</p></header><section class="description introduction" aria-label="阅读说明"><p>四个企业级 AI Coding Hook 最佳实践，分别解决：<strong>机械工作自动化、安全操作约束、长任务上下文恢复、研发经验持续积累</strong>。</p>
+<p>事件名以 Claude Code 为例。以下正反案例与每日复盘结果均为教学示例；Hook 机制依据官方文档核对，未在本仓库安装或运行这些 Hook。</p></section><div id="practices"><article id="practice-A" class="practice" data-search="a 修改后自动格式化 `posttooluse`，匹配 `edit|write`。 agent 每次通过编辑工具修改代码后，自动调用项目已有的格式化工具，只处理本次变更的文件，消除机械性的格式问题。格式化本身无需额外模型推理，可减少格式检查导致的 ci 失败和人工返工。 agent 修改 `src/orders/order-service.ts` 后，hook 自动执行：
+
+```bash
+npx prettier --write src/orders/order-service.ts
+```
+
+python 项目则调用 `ruff format`。使用项目已安装的工具，成功时静默，失败时返回具体错误。 每修改一个文件就格式化整个仓库，制造大量无关 diff；或者启动另一个 agent 对代码进行风格优化，把确定性工具可以完成的工作变成一轮额外的模型推理。 官方指南提供 `posttooluse` 配合 `edit|write` 的格式化示例。该匹配范围不覆盖 bash 等工具产生的全部文件变更；格式化失败的反馈仍可能进入模型上下文。[claude code hook 指南](https://code.claude.com/docs/en/hooks-guide#auto-format-code-after-edits)"><header class="practice-heading"><span class="letter" aria-hidden="true">A</span><h2><span class="sr-only">最佳实践 A：</span>修改后自动格式化</h2><a class="permalink" href="#practice-A" aria-label="定位到最佳实践 A">#A</a></header><div class="hook-row"><strong>使用 Hook</strong><p><code>PostToolUse</code>，匹配 <code>Edit|Write</code>。</p></div><div class="description"><p>Agent 每次通过编辑工具修改代码后，自动调用项目已有的格式化工具，只处理本次变更的文件，消除机械性的格式问题。格式化本身无需额外模型推理，可减少格式检查导致的 CI 失败和人工返工。</p></div><div class="cases"><div class="case good"><div class="case-bar"><h3>GoodCase · 推荐做法</h3><button class="copy" type="button" aria-label="复制最佳实践 A 的 good 案例">复制</button></div><div class="case-body"><p>Agent 修改 <code>src/orders/order-service.ts</code> 后，Hook 自动执行：</p>
+<pre tabindex="0"><code class="language-bash">npx prettier --write src/orders/order-service.ts
+</code></pre>
+<p>Python 项目则调用 <code>ruff format</code>。使用项目已安装的工具，成功时静默，失败时返回具体错误。</p></div></div><div class="case bad"><div class="case-bar"><h3>BadCase · 避免这样做</h3><button class="copy" type="button" aria-label="复制最佳实践 A 的 bad 案例">复制</button></div><div class="case-body"><p>每修改一个文件就格式化整个仓库，制造大量无关 diff；或者启动另一个 Agent 对代码进行风格优化，把确定性工具可以完成的工作变成一轮额外的模型推理。</p></div></div></div><div class="practice-meta"><strong>参考依据：</strong><p>官方指南提供 <code>PostToolUse</code> 配合 <code>Edit|Write</code> 的格式化示例。该匹配范围不覆盖 Bash 等工具产生的全部文件变更；格式化失败的反馈仍可能进入模型上下文。<a href="https://code.claude.com/docs/en/hooks-guide#auto-format-code-after-edits">Claude Code Hook 指南</a></p></div></article>
+<article id="practice-B" class="practice" data-search="b 高风险操作执行前拦截 `pretooluse`，匹配 `bash` 等工具；保护文件时也需覆盖 `edit|write`。 在 agent 执行命令之前，对少数明确禁止、误操作代价高的行为进行确定性检查。命中时直接阻断，并返回可执行的替代方案。优先治理团队真实发生过的高风险操作，不构建庞大的命令黑名单。 agent 准备执行：
+
+```bash
+git push origin main
+```
+
+hook 识别到直接推送主分支，拒绝执行，并返回：
+
+&gt; 当前仓库禁止直接推送 main。请创建功能分支并通过 pr 合并。
+
+类似地，可拦截删除受保护目录、直接修改已执行的数据库迁移文件等操作。承担门禁职责的 hook 使用同步检查，并配置失败时阻断。 对所有 bash 命令调用 llm 做安全审查，导致每次执行测试、查看文件都产生额外延迟和 token 成本。
+
+或者只匹配字符串 `rm -rf` 就认为已经建立完整安全防线。hook 应作为操作约束，不能替代沙箱、权限控制和仓库分支保护。 `pretooluse` 可在动作执行前拒绝；异步检查不能承担阻断。检查器故障时的 `onfailure: &quot;block&quot;` 需要 claude code v2.1.295 及以上，部署时应核对版本并验证故障行为。[claude code hook 参考](https://code.claude.com/docs/en/hooks#block-the-action-when-a-hook-fails)"><header class="practice-heading"><span class="letter" aria-hidden="true">B</span><h2><span class="sr-only">最佳实践 B：</span>高风险操作执行前拦截</h2><a class="permalink" href="#practice-B" aria-label="定位到最佳实践 B">#B</a></header><div class="hook-row"><strong>使用 Hook</strong><p><code>PreToolUse</code>，匹配 <code>Bash</code> 等工具；保护文件时也需覆盖 <code>Edit|Write</code>。</p></div><div class="description"><p>在 Agent 执行命令之前，对少数明确禁止、误操作代价高的行为进行确定性检查。命中时直接阻断，并返回可执行的替代方案。优先治理团队真实发生过的高风险操作，不构建庞大的命令黑名单。</p></div><div class="cases"><div class="case good"><div class="case-bar"><h3>GoodCase · 推荐做法</h3><button class="copy" type="button" aria-label="复制最佳实践 B 的 good 案例">复制</button></div><div class="case-body"><p>Agent 准备执行：</p>
+<pre tabindex="0"><code class="language-bash">git push origin main
+</code></pre>
+<p>Hook 识别到直接推送主分支，拒绝执行，并返回：</p>
+<blockquote>
+<p>当前仓库禁止直接推送 main。请创建功能分支并通过 PR 合并。</p>
+</blockquote>
+<p>类似地，可拦截删除受保护目录、直接修改已执行的数据库迁移文件等操作。承担门禁职责的 Hook 使用同步检查，并配置失败时阻断。</p></div></div><div class="case bad"><div class="case-bar"><h3>BadCase · 避免这样做</h3><button class="copy" type="button" aria-label="复制最佳实践 B 的 bad 案例">复制</button></div><div class="case-body"><p>对所有 Bash 命令调用 LLM 做安全审查，导致每次执行测试、查看文件都产生额外延迟和 Token 成本。</p>
+<p>或者只匹配字符串 <code>rm -rf</code> 就认为已经建立完整安全防线。Hook 应作为操作约束，不能替代沙箱、权限控制和仓库分支保护。</p></div></div></div><div class="practice-meta"><strong>参考依据：</strong><p><code>PreToolUse</code> 可在动作执行前拒绝；异步检查不能承担阻断。检查器故障时的 <code>onFailure: "block"</code> 需要 Claude Code v2.1.295 及以上，部署时应核对版本并验证故障行为。<a href="https://code.claude.com/docs/en/hooks#block-the-action-when-a-hook-fails">Claude Code Hook 参考</a></p></div></article>
+<article id="practice-C" class="practice" data-search="c 自动恢复长任务上下文 `sessionstart`；`precompact` 可选。 在新会话启动、会话恢复或上下文压缩后，自动加载当前任务的必要状态，包括任务目标、执行进度、关键决策、待办事项和必要的文件入口，减少重复探索和约束遗忘。
+
+通过持久化任务状态恢复上下文，避免每次重新总结全部历史会话。主 agent 在执行过程中更新状态文件；`sessionstart` 负责加载，`precompact` 可用于压缩前补存尚未持久化的记录。 agent 正在执行跨天的订单状态迁移，已经完成 schema 变更与兼容代码，历史数据尚未回填。
+
+第二天启动 claude code 时，hook 读取任务状态，注入：
+
+```text
+当前任务：订单状态字段迁移
+已完成：schema 变更、兼容代码
+待完成：历史数据回填、回归测试
+
+关键约束：
+- 不得直接修改已执行的迁移文件
+- 历史数据迁移必须支持断点续跑
+
+任务入口：
+tasks/order-status-migration.md
+```
+
+agent 可以继续工作，无须重新阅读大量历史会话。 每次启动会话都读取全部历史聊天记录、所有 prd、全部技术方案和 skill 文件，导致上下文膨胀、启动成本增加，甚至让过期信息影响当前任务。 `sessionstart` 的 `startup`、`resume`、`compact` 等来源覆盖启动、恢复与压缩后的上下文注入；`precompact` 在压缩前触发。首轮工作依赖的状态应先加载完成。[claude code sessionstart](https://code.claude.com/docs/en/hooks#sessionstart) · [precompact](https://code.claude.com/docs/en/hooks#precompact)"><header class="practice-heading"><span class="letter" aria-hidden="true">C</span><h2><span class="sr-only">最佳实践 C：</span>自动恢复长任务上下文</h2><a class="permalink" href="#practice-C" aria-label="定位到最佳实践 C">#C</a></header><div class="hook-row"><strong>使用 Hook</strong><p><code>SessionStart</code>；<code>PreCompact</code> 可选。</p></div><div class="description"><p>在新会话启动、会话恢复或上下文压缩后，自动加载当前任务的必要状态，包括任务目标、执行进度、关键决策、待办事项和必要的文件入口，减少重复探索和约束遗忘。</p>
+<p>通过持久化任务状态恢复上下文，避免每次重新总结全部历史会话。主 Agent 在执行过程中更新状态文件；<code>SessionStart</code> 负责加载，<code>PreCompact</code> 可用于压缩前补存尚未持久化的记录。</p></div><div class="cases"><div class="case good"><div class="case-bar"><h3>GoodCase · 推荐做法</h3><button class="copy" type="button" aria-label="复制最佳实践 C 的 good 案例">复制</button></div><div class="case-body"><p>Agent 正在执行跨天的订单状态迁移，已经完成 Schema 变更与兼容代码，历史数据尚未回填。</p>
+<p>第二天启动 Claude Code 时，Hook 读取任务状态，注入：</p>
+<pre tabindex="0"><code class="language-text">当前任务：订单状态字段迁移
+已完成：Schema 变更、兼容代码
+待完成：历史数据回填、回归测试
+
+关键约束：
+- 不得直接修改已执行的迁移文件
+- 历史数据迁移必须支持断点续跑
+
+任务入口：
+tasks/order-status-migration.md
+</code></pre>
+<p>Agent 可以继续工作，无须重新阅读大量历史会话。</p></div></div><div class="case bad"><div class="case-bar"><h3>BadCase · 避免这样做</h3><button class="copy" type="button" aria-label="复制最佳实践 C 的 bad 案例">复制</button></div><div class="case-body"><p>每次启动会话都读取全部历史聊天记录、所有 PRD、全部技术方案和 Skill 文件，导致上下文膨胀、启动成本增加，甚至让过期信息影响当前任务。</p></div></div></div><div class="practice-meta"><strong>参考依据：</strong><p><code>SessionStart</code> 的 <code>startup</code>、<code>resume</code>、<code>compact</code> 等来源覆盖启动、恢复与压缩后的上下文注入；<code>PreCompact</code> 在压缩前触发。首轮工作依赖的状态应先加载完成。<a href="https://code.claude.com/docs/en/hooks#sessionstart">Claude Code SessionStart</a> · <a href="https://code.claude.com/docs/en/hooks#precompact">PreCompact</a></p></div></article>
+<article id="practice-D" class="practice" data-search="d 每日自动复盘与记忆进化 `sessionstart`；跨天持续会话可选用 `userpromptsubmit` 补充触发。 每天首次使用 coding agent 时，hook 检查上次成功处理的位置，发现新增历史会话后，异步启动复盘任务。分析昨天或上次成功处理以来的工作记录，完成工作总结、长期记忆更新、个人偏好提炼、失败经验分析，以及 skill 优化建议生成。
+
+hook 作为触发器，复杂分析交给后台 agent。每天最多创建一个复盘作业，失败后恢复同一作业；用处理位置和结果记录避免重复处理历史内容。 | 产物 | 具体内容 | 建议去向 |
+|---|---|---|
+| 工作 summary | 昨天完成的需求、未完成任务、关键决策和遗留问题 | 每日工作摘要 |
+| 长期记忆 | 已确认的架构事实、技术决策、项目约束 | 仓库级个人记忆 |
+| 个人偏好 | 用户反复表达的编码习惯、设计偏好、review 和 verify 偏好 | 个人偏好记忆 |
+| 经验教训 | 失败原因、人工纠正、有效解决方法、重复出现的问题 | 经验库、badcase 库 |
+| skill 进化 | 根据高频错误提出 skill 规则、验证脚本或工作流补丁 | skill 优化候选，审核后应用 | 用户当天第一次打开 claude code，`sessionstart` hook 检测到当天尚未复盘，并发现未处理的历史会话，于是启动后台分析任务。
+
+#### ai coding 每日复盘
+
+示例 · 2026-10-17 工作记录
+
+**昨日工作总结**
+
+完成订单幂等功能和接口测试；数据迁移任务仍有历史数据回填待执行。
+
+**新增个人偏好**
+
+用户两次明确要求技术方案先提供核心实体类型和领域模型骨架，再展开实现细节。
+
+**新增经验教训**
+
+订单幂等测试遗漏并发重复请求，人工验收时发现问题。
+
+**skill 优化建议**
+
+为 verify skill 增加规则：涉及幂等、去重的需求，覆盖并发重复请求及最终业务结果验证。
+
+**记忆更新**
+
+- 1 条明确的个人偏好已写入个人记忆。
+- 1 条 skill 补丁进入待审核列表。
+
+用户无须主动发起复盘。下一次执行相似任务时，已确认的偏好可以发挥作用；高风险规则变更经审核后生效。 每次启动 agent 都重新分析所有历史会话，重复消耗大量 token。
+
+把模型推断出的偏好直接写入全局规则，把一次临时操作当成长期习惯；或者让后台 agent 每天自动重写全部 agents.md 和 skill，导致约束不断膨胀、相互冲突。
+
+明确事实可以自动沉淀，推断性结论需要证据，团队公共规则与 skill 变更需要审核。 ```text
+sessionstart / userpromptsubmit
+     ↓
+检查当天作业、上次成功处理位置和新增会话
+     ↓
+无新增 / 已完成 → 静默退出
+有新增 → 获取任务锁，创建或恢复当天作业
+     ↓
+后台增量读取历史会话
+     ↓
+总结 / 记忆提炼 / 经验分析
+     ↓
+去重、验证、分类
+     ↓
+更新记忆 / 生成 skill 补丁候选
+     ↓
+保存执行结果，成功后推进处理位置
+``` - 触发脚本只做轻量检查与投递，由后台任务执行复盘；“每日”指当天首次使用时触发。
+- 按日期与处理范围建立稳定作业标识；并发启动用锁防重，失败沿用原作业恢复，写入去重。
+- 后台复盘会话跳过同一触发器，避免递归启动；限制单次处理量、模型预算和重试次数。
+- 记忆保留证据与适用范围，按项目归档；团队公共规则和 skill 补丁审核后应用。 `sessionstart` 可通过 command hook 投递后台作业，不能直接配置为 agent hook。每日去重、增量处理、记忆分类与审核流程是本课程方案，需要自行实现和验证。[claude code sessionstart](https://code.claude.com/docs/en/hooks#sessionstart) · [后台进程说明](https://code.claude.com/docs/en/hooks#hooks-that-start-a-background-process)"><header class="practice-heading"><span class="letter" aria-hidden="true">D</span><h2><span class="sr-only">最佳实践 D：</span>每日自动复盘与记忆进化</h2><a class="permalink" href="#practice-D" aria-label="定位到最佳实践 D">#D</a></header><div class="hook-row"><strong>使用 Hook</strong><p><code>SessionStart</code>；跨天持续会话可选用 <code>UserPromptSubmit</code> 补充触发。</p></div><div class="description"><p>每天首次使用 Coding Agent 时，Hook 检查上次成功处理的位置，发现新增历史会话后，异步启动复盘任务。分析昨天或上次成功处理以来的工作记录，完成工作总结、长期记忆更新、个人偏好提炼、失败经验分析，以及 Skill 优化建议生成。</p>
+<p>Hook 作为触发器，复杂分析交给后台 Agent。每天最多创建一个复盘作业，失败后恢复同一作业；用处理位置和结果记录避免重复处理历史内容。</p></div><section class="supplement products"><h3>复盘产物</h3><div class="table-wrap" role="region" aria-label="实践对照表" tabindex="0"><table>
+<thead>
+<tr>
+<th>产物</th>
+<th>具体内容</th>
+<th>建议去向</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>工作 Summary</td>
+<td>昨天完成的需求、未完成任务、关键决策和遗留问题</td>
+<td>每日工作摘要</td>
+</tr>
+<tr>
+<td>长期记忆</td>
+<td>已确认的架构事实、技术决策、项目约束</td>
+<td>仓库级个人记忆</td>
+</tr>
+<tr>
+<td>个人偏好</td>
+<td>用户反复表达的编码习惯、设计偏好、Review 和 Verify 偏好</td>
+<td>个人偏好记忆</td>
+</tr>
+<tr>
+<td>经验教训</td>
+<td>失败原因、人工纠正、有效解决方法、重复出现的问题</td>
+<td>经验库、BadCase 库</td>
+</tr>
+<tr>
+<td>Skill 进化</td>
+<td>根据高频错误提出 Skill 规则、验证脚本或工作流补丁</td>
+<td>Skill 优化候选，审核后应用</td>
+</tr>
+</tbody>
+</table></div></section><div class="cases"><div class="case good"><div class="case-bar"><h3>GoodCase · 推荐做法</h3><button class="copy" type="button" aria-label="复制最佳实践 D 的 good 案例">复制</button></div><div class="case-body"><p>用户当天第一次打开 Claude Code，<code>SessionStart</code> Hook 检测到当天尚未复盘，并发现未处理的历史会话，于是启动后台分析任务。</p>
+<h4>AI Coding 每日复盘</h4>
+<p>示例 · 2026-10-17 工作记录</p>
+<p><strong>昨日工作总结</strong></p>
+<p>完成订单幂等功能和接口测试；数据迁移任务仍有历史数据回填待执行。</p>
+<p><strong>新增个人偏好</strong></p>
+<p>用户两次明确要求技术方案先提供核心实体类型和领域模型骨架，再展开实现细节。</p>
+<p><strong>新增经验教训</strong></p>
+<p>订单幂等测试遗漏并发重复请求，人工验收时发现问题。</p>
+<p><strong>Skill 优化建议</strong></p>
+<p>为 Verify Skill 增加规则：涉及幂等、去重的需求，覆盖并发重复请求及最终业务结果验证。</p>
+<p><strong>记忆更新</strong></p>
+<ul>
+<li>1 条明确的个人偏好已写入个人记忆。</li>
+<li>1 条 Skill 补丁进入待审核列表。</li>
+</ul>
+<p>用户无须主动发起复盘。下一次执行相似任务时，已确认的偏好可以发挥作用；高风险规则变更经审核后生效。</p></div></div><div class="case bad"><div class="case-bar"><h3>BadCase · 避免这样做</h3><button class="copy" type="button" aria-label="复制最佳实践 D 的 bad 案例">复制</button></div><div class="case-body"><p>每次启动 Agent 都重新分析所有历史会话，重复消耗大量 Token。</p>
+<p>把模型推断出的偏好直接写入全局规则，把一次临时操作当成长期习惯；或者让后台 Agent 每天自动重写全部 AGENTS.md 和 Skill，导致约束不断膨胀、相互冲突。</p>
+<p>明确事实可以自动沉淀，推断性结论需要证据，团队公共规则与 Skill 变更需要审核。</p></div></div></div><div class="implementation"><section class="supplement flow"><h3>执行流程</h3><pre tabindex="0"><code class="language-text">SessionStart / UserPromptSubmit
+     ↓
+检查当天作业、上次成功处理位置和新增会话
+     ↓
+无新增 / 已完成 → 静默退出
+有新增 → 获取任务锁，创建或恢复当天作业
+     ↓
+后台增量读取历史会话
+     ↓
+总结 / 记忆提炼 / 经验分析
+     ↓
+去重、验证、分类
+     ↓
+更新记忆 / 生成 Skill 补丁候选
+     ↓
+保存执行结果，成功后推进处理位置
+</code></pre></section><section class="supplement notes"><h3>实现要点</h3><ul>
+<li>触发脚本只做轻量检查与投递，由后台任务执行复盘；“每日”指当天首次使用时触发。</li>
+<li>按日期与处理范围建立稳定作业标识；并发启动用锁防重，失败沿用原作业恢复，写入去重。</li>
+<li>后台复盘会话跳过同一触发器，避免递归启动；限制单次处理量、模型预算和重试次数。</li>
+<li>记忆保留证据与适用范围，按项目归档；团队公共规则和 Skill 补丁审核后应用。</li>
+</ul></section></div><div class="practice-meta"><strong>参考依据：</strong><p><code>SessionStart</code> 可通过 command Hook 投递后台作业，不能直接配置为 agent Hook。每日去重、增量处理、记忆分类与审核流程是本课程方案，需要自行实现和验证。<a href="https://code.claude.com/docs/en/hooks#sessionstart">Claude Code SessionStart</a> · <a href="https://code.claude.com/docs/en/hooks#hooks-that-start-a-background-process">后台进程说明</a></p></div></article></div><div class="empty" hidden><strong>没有匹配的实践</strong><p>换一个关键词，或清除搜索后查看全部内容。</p></div><section class="overview" aria-labelledby="overview-heading"><h2 id="overview-heading">四项实践汇总</h2><div class="table-wrap" role="region" aria-label="实践对照表" tabindex="0"><table>
+<thead>
+<tr>
+<th>最佳实践</th>
+<th>Hook</th>
+<th>主要价值</th>
+<th>执行成本</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A. 修改后自动格式化</td>
+<td><code>PostToolUse</code></td>
+<td>消除机械性返工</td>
+<td>低</td>
+</tr>
+<tr>
+<td>B. 高风险操作执行前拦截</td>
+<td><code>PreToolUse</code></td>
+<td>防止危险操作</td>
+<td>极低（本地确定性检查）</td>
+</tr>
+<tr>
+<td>C. 自动恢复长任务上下文</td>
+<td><code>SessionStart</code>、可选 <code>PreCompact</code></td>
+<td>降低上下文恢复成本</td>
+<td>低～中</td>
+</tr>
+<tr>
+<td>D. 每日自动复盘与记忆进化</td>
+<td><code>SessionStart</code>、可选 <code>UserPromptSubmit</code></td>
+<td>积累记忆、经验与研发资产</td>
+<td>中～高，异步执行</td>
+</tr>
+</tbody>
+</table></div>
+<p>成本为教学场景的相对判断，取决于脚本、数据量和模型配置。</p>
+<h2>两类基础能力</h2>
+<ul>
+<li><strong>A、B：实时工程约束型 Hook。</strong> 高频触发，必须足够快、足够确定，尽量不依赖模型。</li>
+<li><strong>C、D：上下文与持续进化型 Hook。</strong> 上下文恢复与复盘按需执行；即使使用 <code>UserPromptSubmit</code> 高频检查，也只做轻量判断。复杂分析可以调用模型，并具备状态管理、增量处理、去重和成本控制。</li>
+</ul>
+<p><strong>D 可作为企业级 AI Coding Harness 的重点建设方向</strong>：在完成需求之外，把每天的研发活动持续转化为下一次开发可复用的记忆、经验与 Skill 改进。</p></section><footer><p>案例与复盘产物均为教学示例；未在本仓库安装或运行这些 Hook。</p><a href="#top">返回顶部</a></footer></main></div><div class="toast" role="status" hidden></div>
+<script>
+const input=document.querySelector('#search'), cards=[...document.querySelectorAll('.practice')], links=[...document.querySelectorAll('.toc a')], clear=document.querySelector('.clear'), results=document.querySelector('.results'), empty=document.querySelector('.empty');
+function filter(){const q=input.value.trim().toLocaleLowerCase();let count=0;cards.forEach((card,i)=>{const match=!q||card.dataset.search.includes(q);card.hidden=!match;links[i].hidden=!match;if(match)count++});document.querySelector('.overview').hidden=Boolean(q);clear.hidden=!q;empty.hidden=count>0;results.textContent=q?`找到 ${count} / ${cards.length} 条实践`:`全部 ${cards.length} 条实践`}
+input.addEventListener('input',filter);clear.addEventListener('click',()=>{input.value='';filter();input.focus()});document.querySelector('.print').addEventListener('click',()=>window.print());
+let toastTimer;function announce(message){const el=document.querySelector('.toast');el.textContent=message;el.hidden=false;clearTimeout(toastTimer);toastTimer=setTimeout(()=>el.hidden=true,2200)}
+async function copyText(value){if(navigator.clipboard&&window.isSecureContext){try{await navigator.clipboard.writeText(value);return}catch{}}const field=document.createElement('textarea');field.value=value;field.style.cssText='position:fixed;left:-9999px;top:0';document.body.append(field);field.select();const ok=document.execCommand('copy');field.remove();if(!ok)throw new Error('copy unavailable')}
+document.querySelectorAll('.copy').forEach(button=>button.addEventListener('click',async()=>{try{await copyText(button.closest('.case').querySelector('.case-body').innerText);button.textContent='已复制';announce('案例已复制');setTimeout(()=>button.textContent='复制',1600)}catch{announce('自动复制不可用，请选择代码块文字复制。')}button.focus()}));
+const toc=document.querySelector('.toc');if(matchMedia('(max-width:700px)').matches)toc.open=false;
+function activate(id){links.forEach(a=>{if(a.dataset.id===id)a.setAttribute('aria-current','true');else a.removeAttribute('aria-current')})}
+links.forEach(a=>a.addEventListener('click',()=>{activate(a.dataset.id);if(matchMedia('(max-width:700px)').matches)toc.open=false}));
+const observer=new IntersectionObserver(entries=>{const e=entries.filter(x=>x.isIntersecting&&!x.target.hidden).sort((a,b)=>a.boundingClientRect.top-b.boundingClientRect.top)[0];if(e)activate(e.target.id.replace('practice-',''))},{rootMargin:'-5% 0px -55% 0px',threshold:0});cards.forEach(c=>observer.observe(c));activate((location.hash||'#practice-A').replace('#practice-',''));
+</script></body></html>

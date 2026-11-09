@@ -79,13 +79,27 @@
           "number": 7,
           "title": "企业级AI Coding之法：把概率性生成转化为确定性交付",
           "path": "chapters/chapter_02_ai_coding/lesson_07_ai_coding_methods",
-          "assets": []
+          "assets": [
+            {
+              "id": "lesson-07-learning-materials",
+              "title": "第 07 课 AI Coding 之法学习资料",
+              "path": "chapters/chapter_02_ai_coding/lesson_07_ai_coding_methods/learning-materials",
+              "status": "review"
+            }
+          ]
         },
         {
           "number": 8,
           "title": "企业级AI Coding之术：掌握高成功率的 Agent 驾驭与编排技巧",
           "path": "chapters/chapter_02_ai_coding/lesson_08_ai_coding_tactics",
-          "assets": []
+          "assets": [
+            {
+              "id": "lesson-08-learning-materials",
+              "title": "第 08 课 AI Coding 之术学习资料",
+              "path": "chapters/chapter_02_ai_coding/lesson_08_ai_coding_tactics/learning-materials",
+              "status": "review"
+            }
+          ]
         },
         {
           "number": 9,
@@ -156,7 +170,14 @@
           "number": 14,
           "title": "从能调用到可运营：建立企业级模型治理体系",
           "path": "chapters/chapter_04_llm_runtime/lesson_14_model_governance",
-          "assets": []
+          "assets": [
+            {
+              "id": "lesson-14-learning-materials",
+              "title": "第 14 课模型调用可观测与运营治理学习资料",
+              "path": "chapters/chapter_04_llm_runtime/lesson_14_model_governance/learning-materials",
+              "status": "review"
+            }
+          ]
         }
       ]
     },

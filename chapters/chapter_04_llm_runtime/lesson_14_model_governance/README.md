@@ -2,4 +2,4 @@
 
 [返回篇章](../README.md) · [全课导航](../../../README.md)
 
-配套内容将随课程进度补充。
+[PRD 与技术方案学习资料包](learning-materials/README.md)收录 Compass Feature 990 的需求、Markdown 技术方案与离线 HTML。

@@ -1,0 +1,44 @@
+id: lesson-14-learning-materials
+title: 第 14 课模型调用可观测与运营治理学习资料
+course_name: 企业级Agent工程架构实战营
+curriculum_version: v5
+course_track: formal
+chapter_number: 4
+lesson_number: 14
+scope: lesson-learner-delivery
+status: review
+owner: guomeiqing
+updated: 2026-11-08
+path_base: asset-directory
+
+source:
+  repository: https://github.com/shanggqm/compass
+  feature: mai-specs/990-lesson-14-model-observability
+  path: mai-specs/990-lesson-14-model-observability/lesson-14-learning-materials.zip
+  commit: ce2e4bca43df8ebc77885b7107fd8d3eabedd76b
+  tag: compass/L14-complete-r2
+  role: derived-distribution-copy
+
+deliverables:
+  - type: learner-materials-zip
+    path: lesson-14-learning-materials.zip
+    status: review
+    bytes: 186028
+    sha256: 9f9d63b8007c713a153a03e58bef388eb74bb766b3768a7e18c46622da070980
+    storage: git
+    contains:
+      - PRD.md
+      - TECH_DESIGN.md
+      - TECH_DESIGN.html
+      - README.md
+      - visuals/diagram-01.svg
+
+verification:
+  source_copy_sha256: matched
+  archive_integrity: passed
+  offline_reading: passed
+  requirements: AC-990-01–18
+  offline_diagrams: 6
+  offline_code_and_diagram_source_blocks: 39
+  engineering_acceptance: 本地 check/build、PostgreSQL 模型集成、Langfuse 验收、浏览器端到端和 smoke 通过。
+  note: 供应商 HTTP 使用受控夹具，真实厂商与生产负载待验证。

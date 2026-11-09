@@ -2,4 +2,4 @@
 
 [返回篇章](../README.md) · [全课导航](../../../README.md)
 
-配套内容将随课程进度补充。
+[学习资料](learning-materials/README.md) · [离线 HTML 首页](learning-materials/index.html)

@@ -58,7 +58,7 @@ chapters/
 - 用户指定保留的最终学习资料包作为分发快照放在对应课次的 `learning-materials/`，来源、提交和 SHA-256 由 manifest 登记；5–50 MB 的包按具体路径使用 Git LFS。已交付：[第 11 课学习资料包](chapters/chapter_04_llm_runtime/lesson_11_llm_runtime_boundary/learning-materials/README.md)、[第 13 课学习资料包](chapters/chapter_04_llm_runtime/lesson_13_reliable_model_execution/learning-materials/README.md)。
 - 当前导航对应 V5 正式课，共 10 篇、43 课。后续试听课和直播课有配套内容时分别使用 `trial/`、`live/`，轨道内独立编号。
 - 课程大纲、研究和 PPT 在课程开发仓库维护；本仓库只保存公开配套内容。部分产品文档保留课程来源链接，读取这些来源需要课程开发仓库的访问权限，运行配套项目无需访问它们。
-- 现有 Compass、AI Coding 演示素材和 my-ai-infra 继续在各自现有位置维护，本次首批迁入 Composer。
+- 第 07、08 课的 Markdown、HTML 和配图按课次收录在[第二篇](chapters/chapter_02_ai_coding/README.md)。课堂素材源文件、Compass 和 my-ai-infra 继续在各自项目维护。
 
 校验与构建：
 
